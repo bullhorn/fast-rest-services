@@ -145,6 +145,17 @@ class Date implements InjectionAwareInterface, \JsonSerializable {
     }
 
     /**
+     * getEpochMilliseconds
+     * @return bool|float|int
+     */
+    public function getEpochMilliseconds() {
+        if($this->dateInt === false) {
+            return false;
+        }
+        return (double)$this->dateInt * 1000;
+    }
+
+    /**
      * Compares two Dates
      * @param Date $otherDate
      * @return bool
